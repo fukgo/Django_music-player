@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/music
+    command: ["gunicorn", "djangoProject.wsgi:application", "-c", "gunicorn.conf.py"]
+    ports:
+      - "8080:8080"
+    environment:
+      - DJANGO_SETTINGS_MODULE=djangoProject.settings

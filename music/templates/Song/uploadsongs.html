@@ -1,0 +1,76 @@
+{% extends 'Song/home.html' %}
+{% load  static %}
+{% block home %}
+    <h1>创建新歌曲</h1>
+    <form method="post" action="{% url 'song:upload_songs' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="song_name">song_name</label>
+            <input type="text" class="form-control" id="song_name" name="song_name">
+
+        </div>
+<div class="form-group">
+    <label for="song_singer">song_singer</label>
+    <select class="form-control" id="song_singer" name="song_singer">
+        {% for singer in singers %}
+            <option value="{{ singer.id }}">{{ singer.name }}</option>
+        {% endfor %}
+
+    </select>
+</div>
+        <div class="form-group">
+            <label for="song_genre">song_genre</label>
+            <input type="text" class="form-control" id="song_genre" name="song_genre">
+
+        </div>
+
+        <div class="form-group">
+            <label for="song_file">song_file</label>
+            <input type="file" class="form-control" id="song_file" name="song_file">
+
+        </div>
+
+        <div class="form-group">
+            <label for="song_image">song_image</label>
+            <input type="file" class="form-control" id="song_image" name="song_image">
+
+        </div>
+
+        <div class="form-group">
+            <label for="song_lyrics">song_lyrics</label>
+            <input type="file" class="form-control" id="song_lyrics" name="song_lyrics">
+
+        </div>
+
+        <div class="form-group">
+            <label for="song_bio">song_bio</label>
+            <textarea class="form-control" id="song_bio" name="song_bio"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">提交</button>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+        {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                <strong>错误</strong> 请检查以下错误:
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        	
+        {% endif %} 
+    
+    
+    </form>
+{% endblock %}
+
+
+

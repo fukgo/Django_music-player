@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load  static %}
+
+{% block home %}
+    {% block content %}
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="margin-top: 30px;">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+
+            {% for s in random_songs %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <a href="{% url 'song:play_song' s.id %}">
+                        <img src="{{ s.song_image.url }}" class="d-block w-100" alt="..." height="400px"
+                             width="500px">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ s.song_name }}</h5>
+                        <h5>{{ s.song_singer }}</h5>
+                        <p>{{ s.song_bio }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions"
+                data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">上一张</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions"
+                data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">下一张</span>
+        </button>
+    </div>
+
+    <div style="margin-top: 30px">
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for song in songs %}
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="{{ song.song_image.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ song.song_name }}</h4>
+                            <p class="card-title">{{ song.song_singer }}</p>
+                            <p class="card-text">{{ song.song_bio }}</p>
+                            <button type="button" class="btn btn-primary"
+                                    onclick="window.location.href='{% url 'song:play_song' song.id %}'">进入播放
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+        {% endblock %}
+{% endblock %}
+{% block right %}
+    {% include 'right.html' %}
+{% endblock %}
+{% block left %}
+    {% include 'left.html' %}
+{% endblock %}

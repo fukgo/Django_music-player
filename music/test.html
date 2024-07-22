@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Control Panel</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.control-panel {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.user-info, .stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.actions button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.actions button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="control-panel">
+        <header>
+            <h1>Music Player Control Panel</h1>
+            <div class="user-info">
+                <div class="circle" id="online-users-circle">
+                    <span id="online-users">0</span>
+                </div>
+                <p>Online Users</p>
+                <div class="circle" id="total-users-circle">
+                    <span id="total-users">0</span>
+                </div>
+                <p>Total Registered Users</p>
+            </div>
+        </header>
+        <div class="actions">
+            <button id="add-artist">Add Artist</button>
+            <button id="add-song">Add Song</button>
+        </div>
+        <div class="stats">
+            <div class="circle" id="artist-circle">
+                <span id="artist-count">0</span>
+            </div>
+            <p>Artists</p>
+            <div class="circle" id="song-circle">
+                <span id="song-count">0</span>
+            </div>
+            <p>Songs</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('add-artist').addEventListener('click', () => {
+    const artistCount = document.getElementById('artist-count');
+    artistCount.textContent = parseInt(artistCount.textContent) + 1;
+});
+
+document.getElementById('add-song').addEventListener('click', () => {
+    const songCount = document.getElementById('song-count');
+    songCount.textContent = parseInt(songCount.textContent) + 1;
+});
+
+const onlineUsers = document.getElementById('online-users');
+const totalUsers = document.getElementById('total-users');
+
+// Simulate fetching user data
+setTimeout(() => {
+    onlineUsers.textContent = 5; // Example online users
+    totalUsers.textContent = 20; // Example total registered users
+}, 1000);
+
+    </script>
+</body>
+</html>

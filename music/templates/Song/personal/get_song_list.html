@@ -1,0 +1,71 @@
+{% extends 'Song/home.html' %}
+{% load  static %}
+{% block home %}
+<h2>歌曲列表<a style="color: #1E9FFF">{{ list.list_name }}</a></h2>
+
+<div>
+    <a href="{% url 'song:upload_songs' %}" class="btn btn-success" style="float: right">新增歌曲</a>
+</div>
+<p>{{ songs.belong_list }}</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">歌曲名称</th>
+      <th scope="col">歌手</th>
+      <th scope="col">歌曲风格</th>
+      <th scope="col">查看</th>
+      <th scope="col">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for song in songs.all %}
+    <tr>
+      <th scope="row">{{ song.id }}</th>
+      <td><a href="{% url 'song:play_song' song.id %}">{{ song.song_name }}</a></td>
+      <td>{{ song.song_singer }}</td>
+      <td>{{ song.song_genre }}</td>
+      <td><button type="button" class="btn btn-primary btn-details">详情</button></td>
+      <td>
+        <button type="button" class="btn btn-dark btn-change">修改</button>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+    <style>
+    /* CSS */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-details:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-change:hover {
+    background-color: #343a40;
+    color: white;
+}
+    </style>
+
+{% endblock %}

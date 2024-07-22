@@ -1,0 +1,41 @@
+{% extends 'Song/home.html' %}
+{% block home %}
+{% load static %}
+<h1>登录</h1>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="username">账号</label>
+    <input type="text" class="form-control" id="username" name="username">
+    <small class="form-text text-muted">请不要暴露自己的密码</small>
+  </div>
+  <div class="form-group">
+    <label for="password">密码</label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+    <img src="{% url 'user:auth_code' %}" alt="验证码" onclick="">
+      <div class="form-group">
+          
+    <label for="code">验证码</label>
+    <input type="text" class="form-control" id="code" name="code">
+    
+  </div>
+
+  <button type="submit" class="btn btn-primary">登录</button>
+</form>
+            {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                <strong>错误</strong> 请检查以下错误:
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        	
+        {% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,47 @@
+{% extends 'Song/home.html' %}
+{% load  static %}
+{% block home %}
+<h1>歌手列表</h1>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'song:songlist' %}">歌曲</a></li>
+    <li class="breadcrumb-item active" aria-current="page">歌手</li>
+  </ol>
+</nav>
+    <div>
+    <a href="{% url 'song:upload_singers' %}" class="btn btn-success" style="float: right">新增歌手</a>
+    </div>
+    <p>list</p>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">名字</th>
+      <th scope="col">性别</th>
+      <th scope="col">出生日期</th>
+      <th scope="col">个人简介</th>
+      <th scope="col">歌手歌曲</th>
+        <th scope="col">查看</th>
+        <th scope="col">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for singer in singers %}
+    <tr>
+      <th scope="row">{{ singer.id }}</th>
+        <td>{{ singer.name }}</td> 
+        <td>{{ singer.gender_display }}</td> 
+      <td>{{ singer.dob }}</td> 
+      <td>{{ singer.bio|slice:":20" }}······</td>
+        <td><a href="{% url 'song:singersongs' singer.id %}">{{ singer.songs.count }}</a></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'song:singer_detail' singer.id %}'">详情</button></td>
+          <td>
+    <button type="button" class="btn btn-dark" onclick="window.location.href='{% url 'song:change_singer' singer.id %}'">修改</button>
+</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

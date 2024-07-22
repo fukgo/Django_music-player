@@ -1,0 +1,138 @@
+% extends 'Song/home.html' %}
+{% load static %}
+{% block home %}
+    <h1>我的歌单</h1>
+
+    <!-- "新增歌单"按钮 -->
+    <a class="btn btn-success" data-toggle="modal" data-target="#myModal">新增歌单</a>
+
+    <p>list</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">歌单名称</th>
+            <th scope="col">歌曲</th>
+            <th scope="col">查看</th>
+            <th scope="col">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for list in song_lists %}
+            <tr>
+                <th scope="row">{{ list.id }}</th>
+                <td>{{ list.list_name }}</td>
+                <td>{{ list.song.all|join:", " }}</td>
+                <td>
+                    <button type="button" class="btn btn-primary " onclick="window.location.href='{% url 'song:get_song_list_special' list.id %}'">详情</button></td>
+                <td>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#songModal" data-list-id="{{ list.id }}">添加歌曲
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <!-- 模态框的HTML结构 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 这里是表单的HTML结构 -->
+                    <form method="post" action="{% url 'song:post_song_list' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="list_name">歌单名称</label>
+                            <input type="text" class="form-control" id="list_name" name="list_name">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框的HTML结构 -->
+    <div class="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="songModalLabel">添加歌曲</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="songModalBody">
+                <a>歌曲----歌手</a>
+                    <!-- 这里是表单的HTML结构 -->
+                    <form method="post" action="{% url 'song:post_song_list' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for song in all_songs %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{ song.id }}" id="song">
+                            <label class="form-check-label" for="song">
+                                {{ song.song_name }}--{{ song.song_singer.name }}
+                            </label>
+                        </div>
+                        {% endfor %}
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="saveSongs()">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+$('#songModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var listId = button.data('list-id') // Extract info from data-* attributes
+    // Save the listId in the modal for later use
+    $(this).data('list-id', listId);
+});
+function saveSongs() {
+    // 获取所有选中的复选框
+    var checkboxes = document.querySelectorAll('#songModalBody input[type="checkbox"]:checked');
+    // 创建一个FormData对象，用于存储选中的歌曲的ID
+    var formData = new FormData();
+    // 遍历所有选中的复选框，获取歌曲的ID
+    for (var i = 0; i < checkboxes.length; i++) {
+        formData.append('song_ids', checkboxes[i].value);
+        
+    }
+    
+        // 获取list.id
+    var listId = $('#songModal').data('list-id');
+    // 将list.id添加到要发送的数据中
+    formData.append('list_id', listId);
+    console.log(formData.get('song_ids'));
+    console.log(formData.get('list_id'));
+    // 使用fetch API将选中的歌曲的ID发送到服务器
+    fetch("{% url 'song:add_song_to_list' %}", {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // 关闭模态框
+        $('#songModal').modal('hide');
+        // 刷新页面，显示新添加的歌曲
+        location.reload();
+    });
+}
+
+</script>
+{% endblock %}

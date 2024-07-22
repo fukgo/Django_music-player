@@ -1,0 +1,66 @@
+{% extends 'Song/home.html' %}
+{% load  static %}
+{% block home %}
+    <h1>创建新歌手</h1>
+    <form method="post" action="{% url 'song:upload_singers' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" id="name" name="name">
+
+        </div>
+<div class="form-group">
+    <label for="gender">gender</label>
+    <select class="form-control" id="gender" name="gender">
+        <option value="1">男</option>
+        <option value="0">女</option>
+    </select>
+</div>
+    
+        <div class="form-group">
+            <label for="dob">dob</label>
+            <input type="date" class="form-control" id="dob" name="dob">
+
+        </div>
+
+        <div class="form-group">
+            <label for="image">image</label>
+            <input type="file" class="form-control" id="image" name="image">
+
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="bio">bio</label>
+            <textarea class="form-control" id="bio" name="bio"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">提交</button>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+        {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                <strong>错误</strong> 请检查以下错误:
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        	
+        {% endif %} 
+    
+    
+    </form>
+{% endblock %}
+
+
+
+

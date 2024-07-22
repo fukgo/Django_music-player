@@ -1,0 +1,35 @@
+{% extends 'Song/home.html' %}
+{% load  static %}
+{% block home %}
+<div>
+                {% if songs %}
+        <h2>以下是符合<span class="badge badge-primary">{{ keyword }}</span>的查找结果:</h2>
+                <p>共有{{ songs.count }}首歌曲</p>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">歌曲id</th>
+      <th scope="col">歌曲名称</th>
+      <th scope="col">歌手名称</th>
+      <th scope="col">歌曲风格</th>
+        <th scope="col">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for song in songs %}
+    <tr>
+      <th scope="row">{{ song.id }}</th>
+        <td><a href="{% url 'song:play_song' song.id %}">{{ song.song_name }}</a></td>
+        <td><a href="{% url 'song:singersongs' song.song_singer_id %}">{{ song.song_singer.name }}</a></td>
+      <td>{{ song.song_genre }}</td>
+      <td><button type="button" class="btn btn-primary">详情</button></td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+    {% else %}
+            <h1><span class="badge badge-info">没有歌手歌曲</span></h1>
+        {% endif %}
+    </div>
+{% endblock %}

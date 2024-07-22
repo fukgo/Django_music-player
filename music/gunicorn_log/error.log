@@ -1,0 +1,3487 @@
+[2024-06-11 04:49:21 +0000] [7] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:49:21 +0000] [1] [ERROR] Worker (pid:7) exited with code 3
+[2024-06-11 04:49:21 +0000] [8] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:49:21 +0000] [1] [ERROR] Worker (pid:8) exited with code 3
+[2024-06-11 04:49:21 +0000] [11] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:49:46 +0000] [7] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:49:47 +0000] [8] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:49:47 +0000] [1] [ERROR] Worker (pid:7) exited with code 3
+[2024-06-11 04:49:47 +0000] [1] [ERROR] Worker (pid:8) was sent SIGTERM!
+[2024-06-11 04:49:47 +0000] [9] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:49:47 +0000] [10] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:49:47 +0000] [1] [ERROR] Worker (pid:9) exited with code 3
+[2024-06-11 04:53:19 +0000] [8] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:53:19 +0000] [1] [ERROR] Worker (pid:8) exited with code 3
+[2024-06-11 04:53:20 +0000] [7] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:53:20 +0000] [10] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:53:20 +0000] [1] [ERROR] Worker (pid:7) exited with code 3
+[2024-06-11 04:57:27 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa813254e50>
+  on_reload: <function OnReload.on_reload at 0x7fa813254f70>
+  when_ready: <function WhenReady.when_ready at 0x7fa813255090>
+  pre_fork: <function Prefork.pre_fork at 0x7fa8132551b0>
+  post_fork: <function Postfork.post_fork at 0x7fa8132552d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa8132553f0>
+  worker_int: <function WorkerInt.worker_int at 0x7fa813255510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa813255630>
+  pre_exec: <function PreExec.pre_exec at 0x7fa813255750>
+  pre_request: <function PreRequest.pre_request at 0x7fa813255870>
+  post_request: <function PostRequest.post_request at 0x7fa813255900>
+  child_exit: <function ChildExit.child_exit at 0x7fa813255a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa813255b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa813255c60>
+  on_exit: <function OnExit.on_exit at 0x7fa813255d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fa813255ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 04:57:27 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 04:57:27 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 04:57:27 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-06-11 04:57:27 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 04:57:27 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 04:57:27 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 04:57:27 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 04:57:27 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 04:57:27 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 04:57:28 +0000] [7] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:57:28 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 04:57:28 +0000] [1] [ERROR] Worker (pid:7) exited with code 3
+[2024-06-11 04:57:28 +0000] [9] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/music/djangoProject/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_web'
+[2024-06-11 04:57:28 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 04:57:28 +0000] [1] [ERROR] Worker (pid:9) exited with code 3
+[2024-06-11 04:59:18 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb89e268e50>
+  on_reload: <function OnReload.on_reload at 0x7fb89e268f70>
+  when_ready: <function WhenReady.when_ready at 0x7fb89e269090>
+  pre_fork: <function Prefork.pre_fork at 0x7fb89e2691b0>
+  post_fork: <function Postfork.post_fork at 0x7fb89e2692d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb89e2693f0>
+  worker_int: <function WorkerInt.worker_int at 0x7fb89e269510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb89e269630>
+  pre_exec: <function PreExec.pre_exec at 0x7fb89e269750>
+  pre_request: <function PreRequest.pre_request at 0x7fb89e269870>
+  post_request: <function PostRequest.post_request at 0x7fb89e269900>
+  child_exit: <function ChildExit.child_exit at 0x7fb89e269a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb89e269b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb89e269c60>
+  on_exit: <function OnExit.on_exit at 0x7fb89e269d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fb89e269ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 04:59:18 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 04:59:18 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 04:59:18 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-06-11 04:59:18 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 04:59:18 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 04:59:18 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 04:59:18 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 04:59:18 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 04:59:18 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 04:59:26 +0000] [1] [INFO] Handling signal: term
+[2024-06-11 12:59:26 +0800] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 12:59:26 +0800] [10] [INFO] Worker exiting (pid: 10)
+[2024-06-11 12:59:26 +0800] [8] [INFO] Worker exiting (pid: 8)
+[2024-06-11 12:59:26 +0800] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 04:59:26 +0000] [1] [INFO] Shutting down: Master
+[2024-06-11 04:59:30 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1caefb0e50>
+  on_reload: <function OnReload.on_reload at 0x7f1caefb0f70>
+  when_ready: <function WhenReady.when_ready at 0x7f1caefb1090>
+  pre_fork: <function Prefork.pre_fork at 0x7f1caefb11b0>
+  post_fork: <function Postfork.post_fork at 0x7f1caefb12d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1caefb13f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f1caefb1510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1caefb1630>
+  pre_exec: <function PreExec.pre_exec at 0x7f1caefb1750>
+  pre_request: <function PreRequest.pre_request at 0x7f1caefb1870>
+  post_request: <function PostRequest.post_request at 0x7f1caefb1900>
+  child_exit: <function ChildExit.child_exit at 0x7f1caefb1a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1caefb1b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1caefb1c60>
+  on_exit: <function OnExit.on_exit at 0x7f1caefb1d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f1caefb1ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 04:59:30 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 04:59:30 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 04:59:30 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-06-11 04:59:30 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 04:59:30 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 04:59:30 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 04:59:30 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 04:59:30 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 04:59:30 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 05:18:00 +0000] [1] [INFO] Handling signal: term
+[2024-06-11 13:18:00 +0800] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 13:18:00 +0800] [8] [INFO] Worker exiting (pid: 8)
+[2024-06-11 13:18:00 +0800] [10] [INFO] Worker exiting (pid: 10)
+[2024-06-11 13:18:00 +0800] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 05:18:00 +0000] [1] [INFO] Shutting down: Master
+[2024-06-11 05:19:28 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe9f3e90e50>
+  on_reload: <function OnReload.on_reload at 0x7fe9f3e90f70>
+  when_ready: <function WhenReady.when_ready at 0x7fe9f3e91090>
+  pre_fork: <function Prefork.pre_fork at 0x7fe9f3e911b0>
+  post_fork: <function Postfork.post_fork at 0x7fe9f3e912d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe9f3e913f0>
+  worker_int: <function WorkerInt.worker_int at 0x7fe9f3e91510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe9f3e91630>
+  pre_exec: <function PreExec.pre_exec at 0x7fe9f3e91750>
+  pre_request: <function PreRequest.pre_request at 0x7fe9f3e91870>
+  post_request: <function PostRequest.post_request at 0x7fe9f3e91900>
+  child_exit: <function ChildExit.child_exit at 0x7fe9f3e91a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe9f3e91b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe9f3e91c60>
+  on_exit: <function OnExit.on_exit at 0x7fe9f3e91d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fe9f3e91ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 05:19:28 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 05:19:28 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 05:19:28 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-06-11 05:19:28 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 05:19:28 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 05:19:28 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 05:19:28 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 05:19:28 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 05:19:28 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 05:58:35 +0000] [1] [INFO] Handling signal: term
+[2024-06-11 13:58:35 +0800] [10] [INFO] Worker exiting (pid: 10)
+[2024-06-11 13:58:35 +0800] [8] [INFO] Worker exiting (pid: 8)
+[2024-06-11 13:58:35 +0800] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 13:58:35 +0800] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 05:58:35 +0000] [1] [INFO] Shutting down: Master
+[2024-06-11 06:00:54 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f2de7674e50>
+  on_reload: <function OnReload.on_reload at 0x7f2de7674f70>
+  when_ready: <function WhenReady.when_ready at 0x7f2de7675090>
+  pre_fork: <function Prefork.pre_fork at 0x7f2de76751b0>
+  post_fork: <function Postfork.post_fork at 0x7f2de76752d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2de76753f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f2de7675510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2de7675630>
+  pre_exec: <function PreExec.pre_exec at 0x7f2de7675750>
+  pre_request: <function PreRequest.pre_request at 0x7f2de7675870>
+  post_request: <function PostRequest.post_request at 0x7f2de7675900>
+  child_exit: <function ChildExit.child_exit at 0x7f2de7675a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2de7675b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2de7675c60>
+  on_exit: <function OnExit.on_exit at 0x7f2de7675d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f2de7675ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:00:54 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:00:54 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 06:00:54 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-06-11 06:00:54 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 06:00:54 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 06:00:54 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 06:00:54 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 06:00:54 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 06:00:54 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 06:02:37 +0000] [18] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: django_web.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7feecbdcce50>
+  on_reload: <function OnReload.on_reload at 0x7feecbdccf70>
+  when_ready: <function WhenReady.when_ready at 0x7feecbdcd090>
+  pre_fork: <function Prefork.pre_fork at 0x7feecbdcd1b0>
+  post_fork: <function Postfork.post_fork at 0x7feecbdcd2d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7feecbdcd3f0>
+  worker_int: <function WorkerInt.worker_int at 0x7feecbdcd510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7feecbdcd630>
+  pre_exec: <function PreExec.pre_exec at 0x7feecbdcd750>
+  pre_request: <function PreRequest.pre_request at 0x7feecbdcd870>
+  post_request: <function PostRequest.post_request at 0x7feecbdcd900>
+  child_exit: <function ChildExit.child_exit at 0x7feecbdcda20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7feecbdcdb40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7feecbdcdc60>
+  on_exit: <function OnExit.on_exit at 0x7feecbdcdd80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7feecbdcdea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:02:37 +0000] [18] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:02:37 +0000] [18] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:37 +0000] [18] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:37 +0000] [18] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:38 +0000] [18] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:38 +0000] [18] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:38 +0000] [18] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:39 +0000] [18] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:39 +0000] [18] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:39 +0000] [18] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:40 +0000] [18] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:40 +0000] [18] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:40 +0000] [18] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:41 +0000] [18] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:41 +0000] [18] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:41 +0000] [18] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:42 +0000] [18] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:02:53 +0000] [19] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: django_web.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f6bb1588e50>
+  on_reload: <function OnReload.on_reload at 0x7f6bb1588f70>
+  when_ready: <function WhenReady.when_ready at 0x7f6bb1589090>
+  pre_fork: <function Prefork.pre_fork at 0x7f6bb15891b0>
+  post_fork: <function Postfork.post_fork at 0x7f6bb15892d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6bb15893f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f6bb1589510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6bb1589630>
+  pre_exec: <function PreExec.pre_exec at 0x7f6bb1589750>
+  pre_request: <function PreRequest.pre_request at 0x7f6bb1589870>
+  post_request: <function PostRequest.post_request at 0x7f6bb1589900>
+  child_exit: <function ChildExit.child_exit at 0x7f6bb1589a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6bb1589b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6bb1589c60>
+  on_exit: <function OnExit.on_exit at 0x7f6bb1589d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f6bb1589ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:02:53 +0000] [19] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:02:53 +0000] [19] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:53 +0000] [19] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:53 +0000] [19] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:54 +0000] [19] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:54 +0000] [19] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:54 +0000] [19] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:55 +0000] [19] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:55 +0000] [19] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:55 +0000] [19] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:56 +0000] [19] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:56 +0000] [19] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:56 +0000] [19] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:57 +0000] [19] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:02:57 +0000] [19] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:02:57 +0000] [19] [ERROR] Retrying in 1 second.
+[2024-06-11 06:02:58 +0000] [19] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:04:21 +0000] [1] [INFO] Handling signal: term
+[2024-06-11 14:04:21 +0800] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 14:04:21 +0800] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 14:04:21 +0800] [8] [INFO] Worker exiting (pid: 8)
+[2024-06-11 14:04:21 +0800] [10] [INFO] Worker exiting (pid: 10)
+[2024-06-11 06:04:21 +0000] [1] [INFO] Shutting down: Master
+[2024-06-11 06:09:25 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1319370e50>
+  on_reload: <function OnReload.on_reload at 0x7f1319370f70>
+  when_ready: <function WhenReady.when_ready at 0x7f1319371090>
+  pre_fork: <function Prefork.pre_fork at 0x7f13193711b0>
+  post_fork: <function Postfork.post_fork at 0x7f13193712d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f13193713f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f1319371510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1319371630>
+  pre_exec: <function PreExec.pre_exec at 0x7f1319371750>
+  pre_request: <function PreRequest.pre_request at 0x7f1319371870>
+  post_request: <function PostRequest.post_request at 0x7f1319371900>
+  child_exit: <function ChildExit.child_exit at 0x7f1319371a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1319371b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1319371c60>
+  on_exit: <function OnExit.on_exit at 0x7f1319371d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f1319371ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:09:25 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:09:25 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 06:09:25 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-06-11 06:09:25 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 06:09:25 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 06:09:25 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 06:09:25 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 06:09:25 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 06:09:25 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 06:09:26 +0000] [1] [INFO] Handling signal: term
+[2024-06-11 14:09:26 +0800] [8] [INFO] Worker exiting (pid: 8)
+[2024-06-11 14:09:26 +0800] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 14:09:26 +0800] [10] [INFO] Worker exiting (pid: 10)
+[2024-06-11 14:09:26 +0800] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 06:09:26 +0000] [1] [INFO] Shutting down: Master
+[2024-06-11 06:09:30 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f038a510e50>
+  on_reload: <function OnReload.on_reload at 0x7f038a510f70>
+  when_ready: <function WhenReady.when_ready at 0x7f038a511090>
+  pre_fork: <function Prefork.pre_fork at 0x7f038a5111b0>
+  post_fork: <function Postfork.post_fork at 0x7f038a5112d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f038a5113f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f038a511510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f038a511630>
+  pre_exec: <function PreExec.pre_exec at 0x7f038a511750>
+  pre_request: <function PreRequest.pre_request at 0x7f038a511870>
+  post_request: <function PostRequest.post_request at 0x7f038a511900>
+  child_exit: <function ChildExit.child_exit at 0x7f038a511a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f038a511b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f038a511c60>
+  on_exit: <function OnExit.on_exit at 0x7f038a511d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f038a511ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:09:30 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:09:30 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 06:09:30 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-06-11 06:09:30 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 06:09:30 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 06:09:30 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 06:09:30 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 06:09:30 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 06:09:30 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 06:16:55 +0000] [20] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myproject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f5443280e50>
+  on_reload: <function OnReload.on_reload at 0x7f5443280f70>
+  when_ready: <function WhenReady.when_ready at 0x7f5443281090>
+  pre_fork: <function Prefork.pre_fork at 0x7f54432811b0>
+  post_fork: <function Postfork.post_fork at 0x7f54432812d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f54432813f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f5443281510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5443281630>
+  pre_exec: <function PreExec.pre_exec at 0x7f5443281750>
+  pre_request: <function PreRequest.pre_request at 0x7f5443281870>
+  post_request: <function PostRequest.post_request at 0x7f5443281900>
+  child_exit: <function ChildExit.child_exit at 0x7f5443281a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5443281b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5443281c60>
+  on_exit: <function OnExit.on_exit at 0x7f5443281d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f5443281ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:16:55 +0000] [20] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:16:55 +0000] [20] [DEBUG] Arbiter booted
+[2024-06-11 06:16:55 +0000] [20] [INFO] Listening at: http://0.0.0.0:8080 (20)
+[2024-06-11 06:16:55 +0000] [20] [INFO] Using worker: sync
+[2024-06-11 06:16:55 +0000] [21] [INFO] Booting worker with pid: 21
+[2024-06-11 06:16:55 +0000] [21] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'myproject'
+[2024-06-11 06:16:55 +0000] [21] [INFO] Worker exiting (pid: 21)
+[2024-06-11 06:16:55 +0000] [20] [ERROR] Worker (pid:21) exited with code 3
+[2024-06-11 06:16:55 +0000] [20] [ERROR] Shutting down: Master
+[2024-06-11 06:16:55 +0000] [20] [ERROR] Reason: Worker failed to boot.
+[2024-06-11 06:17:13 +0000] [22] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoPoject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fd73216ce50>
+  on_reload: <function OnReload.on_reload at 0x7fd73216cf70>
+  when_ready: <function WhenReady.when_ready at 0x7fd73216d090>
+  pre_fork: <function Prefork.pre_fork at 0x7fd73216d1b0>
+  post_fork: <function Postfork.post_fork at 0x7fd73216d2d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd73216d3f0>
+  worker_int: <function WorkerInt.worker_int at 0x7fd73216d510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd73216d630>
+  pre_exec: <function PreExec.pre_exec at 0x7fd73216d750>
+  pre_request: <function PreRequest.pre_request at 0x7fd73216d870>
+  post_request: <function PostRequest.post_request at 0x7fd73216d900>
+  child_exit: <function ChildExit.child_exit at 0x7fd73216da20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd73216db40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd73216dc60>
+  on_exit: <function OnExit.on_exit at 0x7fd73216dd80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fd73216dea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:17:13 +0000] [22] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:17:13 +0000] [22] [DEBUG] Arbiter booted
+[2024-06-11 06:17:13 +0000] [22] [INFO] Listening at: http://0.0.0.0:8080 (22)
+[2024-06-11 06:17:13 +0000] [22] [INFO] Using worker: sync
+[2024-06-11 06:17:13 +0000] [23] [INFO] Booting worker with pid: 23
+[2024-06-11 06:17:13 +0000] [23] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'djangoPoject'
+[2024-06-11 06:17:13 +0000] [23] [INFO] Worker exiting (pid: 23)
+[2024-06-11 06:17:13 +0000] [24] [INFO] Booting worker with pid: 24
+[2024-06-11 06:17:13 +0000] [24] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'djangoPoject'
+[2024-06-11 06:17:13 +0000] [24] [INFO] Worker exiting (pid: 24)
+[2024-06-11 06:17:13 +0000] [22] [ERROR] Worker (pid:23) exited with code 3
+[2024-06-11 06:17:13 +0000] [22] [ERROR] Worker (pid:24) was sent SIGTERM!
+[2024-06-11 06:17:13 +0000] [22] [ERROR] Shutting down: Master
+[2024-06-11 06:17:13 +0000] [22] [ERROR] Reason: Worker failed to boot.
+[2024-06-11 06:17:17 +0000] [25] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoPoject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff202bf0e50>
+  on_reload: <function OnReload.on_reload at 0x7ff202bf0f70>
+  when_ready: <function WhenReady.when_ready at 0x7ff202bf1090>
+  pre_fork: <function Prefork.pre_fork at 0x7ff202bf11b0>
+  post_fork: <function Postfork.post_fork at 0x7ff202bf12d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff202bf13f0>
+  worker_int: <function WorkerInt.worker_int at 0x7ff202bf1510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff202bf1630>
+  pre_exec: <function PreExec.pre_exec at 0x7ff202bf1750>
+  pre_request: <function PreRequest.pre_request at 0x7ff202bf1870>
+  post_request: <function PostRequest.post_request at 0x7ff202bf1900>
+  child_exit: <function ChildExit.child_exit at 0x7ff202bf1a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff202bf1b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff202bf1c60>
+  on_exit: <function OnExit.on_exit at 0x7ff202bf1d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7ff202bf1ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:17:17 +0000] [25] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:17:17 +0000] [25] [DEBUG] Arbiter booted
+[2024-06-11 06:17:17 +0000] [25] [INFO] Listening at: http://0.0.0.0:8080 (25)
+[2024-06-11 06:17:17 +0000] [25] [INFO] Using worker: sync
+[2024-06-11 06:17:17 +0000] [26] [INFO] Booting worker with pid: 26
+[2024-06-11 06:17:17 +0000] [26] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'djangoPoject'
+[2024-06-11 06:17:17 +0000] [26] [INFO] Worker exiting (pid: 26)
+[2024-06-11 06:17:17 +0000] [25] [ERROR] Worker (pid:26) exited with code 3
+[2024-06-11 06:17:17 +0000] [25] [ERROR] Shutting down: Master
+[2024-06-11 06:17:17 +0000] [25] [ERROR] Reason: Worker failed to boot.
+[2024-06-11 06:18:47 +0000] [35] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myproject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f5d9e334e50>
+  on_reload: <function OnReload.on_reload at 0x7f5d9e334f70>
+  when_ready: <function WhenReady.when_ready at 0x7f5d9e335090>
+  pre_fork: <function Prefork.pre_fork at 0x7f5d9e3351b0>
+  post_fork: <function Postfork.post_fork at 0x7f5d9e3352d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5d9e3353f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f5d9e335510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5d9e335630>
+  pre_exec: <function PreExec.pre_exec at 0x7f5d9e335750>
+  pre_request: <function PreRequest.pre_request at 0x7f5d9e335870>
+  post_request: <function PostRequest.post_request at 0x7f5d9e335900>
+  child_exit: <function ChildExit.child_exit at 0x7f5d9e335a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5d9e335b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5d9e335c60>
+  on_exit: <function OnExit.on_exit at 0x7f5d9e335d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f5d9e335ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:18:47 +0000] [35] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:18:47 +0000] [35] [DEBUG] Arbiter booted
+[2024-06-11 06:18:47 +0000] [35] [INFO] Listening at: http://0.0.0.0:8080 (35)
+[2024-06-11 06:18:47 +0000] [35] [INFO] Using worker: sync
+[2024-06-11 06:18:47 +0000] [36] [INFO] Booting worker with pid: 36
+[2024-06-11 06:18:47 +0000] [36] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'myproject'
+[2024-06-11 06:18:47 +0000] [36] [INFO] Worker exiting (pid: 36)
+[2024-06-11 06:18:47 +0000] [35] [ERROR] Worker (pid:36) exited with code 3
+[2024-06-11 06:18:47 +0000] [35] [ERROR] Shutting down: Master
+[2024-06-11 06:18:47 +0000] [35] [ERROR] Reason: Worker failed to boot.
+[2024-06-11 06:30:10 +0000] [65] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f69e5280e50>
+  on_reload: <function OnReload.on_reload at 0x7f69e5280f70>
+  when_ready: <function WhenReady.when_ready at 0x7f69e5281090>
+  pre_fork: <function Prefork.pre_fork at 0x7f69e52811b0>
+  post_fork: <function Postfork.post_fork at 0x7f69e52812d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f69e52813f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f69e5281510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f69e5281630>
+  pre_exec: <function PreExec.pre_exec at 0x7f69e5281750>
+  pre_request: <function PreRequest.pre_request at 0x7f69e5281870>
+  post_request: <function PostRequest.post_request at 0x7f69e5281900>
+  child_exit: <function ChildExit.child_exit at 0x7f69e5281a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f69e5281b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f69e5281c60>
+  on_exit: <function OnExit.on_exit at 0x7f69e5281d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f69e5281ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:30:10 +0000] [65] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:30:10 +0000] [65] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:10 +0000] [65] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:10 +0000] [65] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:11 +0000] [65] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:11 +0000] [65] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:11 +0000] [65] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:12 +0000] [65] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:12 +0000] [65] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:12 +0000] [65] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:13 +0000] [65] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:13 +0000] [65] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:13 +0000] [65] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:14 +0000] [65] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:14 +0000] [65] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:14 +0000] [65] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:15 +0000] [65] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:30:32 +0000] [66] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa3795a8e50>
+  on_reload: <function OnReload.on_reload at 0x7fa3795a8f70>
+  when_ready: <function WhenReady.when_ready at 0x7fa3795a9090>
+  pre_fork: <function Prefork.pre_fork at 0x7fa3795a91b0>
+  post_fork: <function Postfork.post_fork at 0x7fa3795a92d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa3795a93f0>
+  worker_int: <function WorkerInt.worker_int at 0x7fa3795a9510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa3795a9630>
+  pre_exec: <function PreExec.pre_exec at 0x7fa3795a9750>
+  pre_request: <function PreRequest.pre_request at 0x7fa3795a9870>
+  post_request: <function PostRequest.post_request at 0x7fa3795a9900>
+  child_exit: <function ChildExit.child_exit at 0x7fa3795a9a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa3795a9b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa3795a9c60>
+  on_exit: <function OnExit.on_exit at 0x7fa3795a9d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fa3795a9ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:30:32 +0000] [66] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:30:32 +0000] [66] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:32 +0000] [66] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:32 +0000] [66] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:34 +0000] [66] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:34 +0000] [66] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:34 +0000] [66] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:35 +0000] [66] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:35 +0000] [66] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:35 +0000] [66] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:36 +0000] [66] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:36 +0000] [66] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:36 +0000] [66] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:37 +0000] [66] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:37 +0000] [66] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:37 +0000] [66] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:38 +0000] [66] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:30:40 +0000] [67] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:applicat
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8022ecce50>
+  on_reload: <function OnReload.on_reload at 0x7f8022eccf70>
+  when_ready: <function WhenReady.when_ready at 0x7f8022ecd090>
+  pre_fork: <function Prefork.pre_fork at 0x7f8022ecd1b0>
+  post_fork: <function Postfork.post_fork at 0x7f8022ecd2d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8022ecd3f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f8022ecd510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8022ecd630>
+  pre_exec: <function PreExec.pre_exec at 0x7f8022ecd750>
+  pre_request: <function PreRequest.pre_request at 0x7f8022ecd870>
+  post_request: <function PostRequest.post_request at 0x7f8022ecd900>
+  child_exit: <function ChildExit.child_exit at 0x7f8022ecda20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8022ecdb40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8022ecdc60>
+  on_exit: <function OnExit.on_exit at 0x7f8022ecdd80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f8022ecdea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:30:40 +0000] [67] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:30:40 +0000] [67] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:40 +0000] [67] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:40 +0000] [67] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:41 +0000] [67] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:41 +0000] [67] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:41 +0000] [67] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:42 +0000] [67] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:42 +0000] [67] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:42 +0000] [67] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:43 +0000] [67] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:43 +0000] [67] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:43 +0000] [67] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:44 +0000] [67] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:30:44 +0000] [67] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:30:44 +0000] [67] [ERROR] Retrying in 1 second.
+[2024-06-11 06:30:45 +0000] [67] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:32:03 +0000] [68] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f592d01ce50>
+  on_reload: <function OnReload.on_reload at 0x7f592d01cf70>
+  when_ready: <function WhenReady.when_ready at 0x7f592d01d090>
+  pre_fork: <function Prefork.pre_fork at 0x7f592d01d1b0>
+  post_fork: <function Postfork.post_fork at 0x7f592d01d2d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f592d01d3f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f592d01d510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f592d01d630>
+  pre_exec: <function PreExec.pre_exec at 0x7f592d01d750>
+  pre_request: <function PreRequest.pre_request at 0x7f592d01d870>
+  post_request: <function PostRequest.post_request at 0x7f592d01d900>
+  child_exit: <function ChildExit.child_exit at 0x7f592d01da20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f592d01db40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f592d01dc60>
+  on_exit: <function OnExit.on_exit at 0x7f592d01dd80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f592d01dea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:32:03 +0000] [68] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:32:03 +0000] [68] [DEBUG] Arbiter booted
+[2024-06-11 06:32:03 +0000] [68] [INFO] Listening at: http://0.0.0.0:8080 (68)
+[2024-06-11 06:32:03 +0000] [68] [INFO] Using worker: sync
+[2024-06-11 06:32:03 +0000] [69] [INFO] Booting worker with pid: 69
+[2024-06-11 06:32:03 +0000] [70] [INFO] Booting worker with pid: 70
+[2024-06-11 06:32:03 +0000] [71] [INFO] Booting worker with pid: 71
+[2024-06-11 06:32:03 +0000] [72] [INFO] Booting worker with pid: 72
+[2024-06-11 06:32:03 +0000] [68] [DEBUG] 4 workers
+[2024-06-11 14:32:09 +0800] [71] [DEBUG] GET /
+[2024-06-11 14:32:13 +0800] [71] [DEBUG] GET /
+[2024-06-11 06:32:21 +0000] [68] [INFO] Handling signal: int
+[2024-06-11 14:32:21 +0800] [71] [INFO] Worker exiting (pid: 71)
+[2024-06-11 14:32:21 +0800] [72] [INFO] Worker exiting (pid: 72)
+[2024-06-11 14:32:21 +0800] [69] [INFO] Worker exiting (pid: 69)
+[2024-06-11 14:32:21 +0800] [70] [INFO] Worker exiting (pid: 70)
+[2024-06-11 06:32:21 +0000] [68] [INFO] Shutting down: Master
+[2024-06-11 06:32:25 +0000] [73] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:applicat
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f9491f50e50>
+  on_reload: <function OnReload.on_reload at 0x7f9491f50f70>
+  when_ready: <function WhenReady.when_ready at 0x7f9491f51090>
+  pre_fork: <function Prefork.pre_fork at 0x7f9491f511b0>
+  post_fork: <function Postfork.post_fork at 0x7f9491f512d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9491f513f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f9491f51510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f9491f51630>
+  pre_exec: <function PreExec.pre_exec at 0x7f9491f51750>
+  pre_request: <function PreRequest.pre_request at 0x7f9491f51870>
+  post_request: <function PostRequest.post_request at 0x7f9491f51900>
+  child_exit: <function ChildExit.child_exit at 0x7f9491f51a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f9491f51b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f9491f51c60>
+  on_exit: <function OnExit.on_exit at 0x7f9491f51d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f9491f51ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:32:25 +0000] [73] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:32:25 +0000] [73] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:32:25 +0000] [73] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:32:25 +0000] [73] [ERROR] Retrying in 1 second.
+[2024-06-11 06:32:26 +0000] [73] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:32:26 +0000] [73] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:32:26 +0000] [73] [ERROR] Retrying in 1 second.
+[2024-06-11 06:32:27 +0000] [73] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:32:27 +0000] [73] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:32:27 +0000] [73] [ERROR] Retrying in 1 second.
+[2024-06-11 06:32:28 +0000] [73] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:32:28 +0000] [73] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:32:28 +0000] [73] [ERROR] Retrying in 1 second.
+[2024-06-11 06:32:29 +0000] [73] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:32:29 +0000] [73] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:32:29 +0000] [73] [ERROR] Retrying in 1 second.
+[2024-06-11 06:32:30 +0000] [73] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:33:11 +0000] [74] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f6ced500e50>
+  on_reload: <function OnReload.on_reload at 0x7f6ced500f70>
+  when_ready: <function WhenReady.when_ready at 0x7f6ced501090>
+  pre_fork: <function Prefork.pre_fork at 0x7f6ced5011b0>
+  post_fork: <function Postfork.post_fork at 0x7f6ced5012d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6ced5013f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f6ced501510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6ced501630>
+  pre_exec: <function PreExec.pre_exec at 0x7f6ced501750>
+  pre_request: <function PreRequest.pre_request at 0x7f6ced501870>
+  post_request: <function PostRequest.post_request at 0x7f6ced501900>
+  child_exit: <function ChildExit.child_exit at 0x7f6ced501a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6ced501b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6ced501c60>
+  on_exit: <function OnExit.on_exit at 0x7f6ced501d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f6ced501ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:33:11 +0000] [74] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:33:11 +0000] [74] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:33:11 +0000] [74] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:33:11 +0000] [74] [ERROR] Retrying in 1 second.
+[2024-06-11 06:33:12 +0000] [74] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:33:12 +0000] [74] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:33:12 +0000] [74] [ERROR] Retrying in 1 second.
+[2024-06-11 06:33:13 +0000] [74] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:33:13 +0000] [74] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:33:13 +0000] [74] [ERROR] Retrying in 1 second.
+[2024-06-11 06:33:14 +0000] [74] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:33:14 +0000] [74] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:33:14 +0000] [74] [ERROR] Retrying in 1 second.
+[2024-06-11 06:33:15 +0000] [74] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:33:15 +0000] [74] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:33:15 +0000] [74] [ERROR] Retrying in 1 second.
+[2024-06-11 06:33:16 +0000] [74] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:34:59 +0000] [76] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: ['test.log']
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fbe6fd58e50>
+  on_reload: <function OnReload.on_reload at 0x7fbe6fd58f70>
+  when_ready: <function WhenReady.when_ready at 0x7fbe6fd59090>
+  pre_fork: <function Prefork.pre_fork at 0x7fbe6fd591b0>
+  post_fork: <function Postfork.post_fork at 0x7fbe6fd592d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fbe6fd593f0>
+  worker_int: <function WorkerInt.worker_int at 0x7fbe6fd59510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fbe6fd59630>
+  pre_exec: <function PreExec.pre_exec at 0x7fbe6fd59750>
+  pre_request: <function PreRequest.pre_request at 0x7fbe6fd59870>
+  post_request: <function PostRequest.post_request at 0x7fbe6fd59900>
+  child_exit: <function ChildExit.child_exit at 0x7fbe6fd59a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fbe6fd59b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fbe6fd59c60>
+  on_exit: <function OnExit.on_exit at 0x7fbe6fd59d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fbe6fd59ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:35:47 +0000] [78] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/acess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f042b0fce50>
+  on_reload: <function OnReload.on_reload at 0x7f042b0fcf70>
+  when_ready: <function WhenReady.when_ready at 0x7f042b0fd090>
+  pre_fork: <function Prefork.pre_fork at 0x7f042b0fd1b0>
+  post_fork: <function Postfork.post_fork at 0x7f042b0fd2d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f042b0fd3f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f042b0fd510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f042b0fd630>
+  pre_exec: <function PreExec.pre_exec at 0x7f042b0fd750>
+  pre_request: <function PreRequest.pre_request at 0x7f042b0fd870>
+  post_request: <function PostRequest.post_request at 0x7f042b0fd900>
+  child_exit: <function ChildExit.child_exit at 0x7f042b0fda20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f042b0fdb40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f042b0fdc60>
+  on_exit: <function OnExit.on_exit at 0x7f042b0fdd80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f042b0fdea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:35:47 +0000] [78] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:35:47 +0000] [78] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:35:47 +0000] [78] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:35:47 +0000] [78] [ERROR] Retrying in 1 second.
+[2024-06-11 06:35:48 +0000] [78] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:35:48 +0000] [78] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:35:48 +0000] [78] [ERROR] Retrying in 1 second.
+[2024-06-11 06:35:49 +0000] [78] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:35:49 +0000] [78] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:35:49 +0000] [78] [ERROR] Retrying in 1 second.
+[2024-06-11 06:35:50 +0000] [78] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:35:50 +0000] [78] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:35:50 +0000] [78] [ERROR] Retrying in 1 second.
+[2024-06-11 06:35:51 +0000] [78] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-11 06:35:51 +0000] [78] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-11 06:35:51 +0000] [78] [ERROR] Retrying in 1 second.
+[2024-06-11 06:35:52 +0000] [78] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-11 06:49:08 +0000] [160] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: djangoProject.wsgi:application
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff015990e50>
+  on_reload: <function OnReload.on_reload at 0x7ff015990f70>
+  when_ready: <function WhenReady.when_ready at 0x7ff015991090>
+  pre_fork: <function Prefork.pre_fork at 0x7ff0159911b0>
+  post_fork: <function Postfork.post_fork at 0x7ff0159912d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff0159913f0>
+  worker_int: <function WorkerInt.worker_int at 0x7ff015991510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff015991630>
+  pre_exec: <function PreExec.pre_exec at 0x7ff015991750>
+  pre_request: <function PreRequest.pre_request at 0x7ff015991870>
+  post_request: <function PostRequest.post_request at 0x7ff015991900>
+  child_exit: <function ChildExit.child_exit at 0x7ff015991a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff015991b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff015991c60>
+  on_exit: <function OnExit.on_exit at 0x7ff015991d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7ff015991ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:49:08 +0000] [160] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:49:08 +0000] [160] [DEBUG] Arbiter booted
+[2024-06-11 06:49:08 +0000] [160] [INFO] Listening at: http://0.0.0.0:8080 (160)
+[2024-06-11 06:49:08 +0000] [160] [INFO] Using worker: sync
+[2024-06-11 06:49:08 +0000] [161] [INFO] Booting worker with pid: 161
+[2024-06-11 06:49:08 +0000] [162] [INFO] Booting worker with pid: 162
+[2024-06-11 06:49:08 +0000] [163] [INFO] Booting worker with pid: 163
+[2024-06-11 06:49:08 +0000] [164] [INFO] Booting worker with pid: 164
+[2024-06-11 06:49:08 +0000] [160] [DEBUG] 4 workers
+[2024-06-11 14:49:19 +0800] [161] [DEBUG] GET /
+[2024-06-11 14:49:21 +0800] [161] [DEBUG] GET /
+[2024-06-11 14:49:29 +0800] [161] [DEBUG] GET /
+[2024-06-11 14:50:58 +0800] [162] [DEBUG] worker: SIGWINCH ignored.
+[2024-06-11 14:50:58 +0800] [161] [DEBUG] worker: SIGWINCH ignored.
+[2024-06-11 14:50:58 +0800] [164] [DEBUG] worker: SIGWINCH ignored.
+[2024-06-11 06:50:58 +0000] [160] [INFO] Handling signal: winch
+[2024-06-11 06:50:58 +0000] [160] [DEBUG] SIGWINCH ignored. Not daemonized
+[2024-06-11 14:50:58 +0800] [163] [DEBUG] worker: SIGWINCH ignored.
+[2024-06-11 06:51:03 +0000] [160] [INFO] Handling signal: int
+[2024-06-11 14:51:03 +0800] [164] [INFO] Worker exiting (pid: 164)
+[2024-06-11 14:51:03 +0800] [162] [INFO] Worker exiting (pid: 162)
+[2024-06-11 14:51:03 +0800] [161] [INFO] Worker exiting (pid: 161)
+[2024-06-11 14:51:03 +0800] [163] [INFO] Worker exiting (pid: 163)
+[2024-06-11 06:51:03 +0000] [160] [INFO] Shutting down: Master
+[2024-06-11 06:52:56 +0000] [1] [INFO] Handling signal: term
+[2024-06-11 14:52:56 +0800] [8] [INFO] Worker exiting (pid: 8)
+[2024-06-11 14:52:56 +0800] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 14:52:56 +0800] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 14:52:56 +0800] [10] [INFO] Worker exiting (pid: 10)
+[2024-06-11 06:52:56 +0000] [1] [INFO] Shutting down: Master
+[2024-06-11 06:52:57 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: djangoProject.wsgi:application
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe5c0e44e50>
+  on_reload: <function OnReload.on_reload at 0x7fe5c0e44f70>
+  when_ready: <function WhenReady.when_ready at 0x7fe5c0e45090>
+  pre_fork: <function Prefork.pre_fork at 0x7fe5c0e451b0>
+  post_fork: <function Postfork.post_fork at 0x7fe5c0e452d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe5c0e453f0>
+  worker_int: <function WorkerInt.worker_int at 0x7fe5c0e45510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe5c0e45630>
+  pre_exec: <function PreExec.pre_exec at 0x7fe5c0e45750>
+  pre_request: <function PreRequest.pre_request at 0x7fe5c0e45870>
+  post_request: <function PostRequest.post_request at 0x7fe5c0e45900>
+  child_exit: <function ChildExit.child_exit at 0x7fe5c0e45a20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe5c0e45b40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe5c0e45c60>
+  on_exit: <function OnExit.on_exit at 0x7fe5c0e45d80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fe5c0e45ea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 06:52:57 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 06:52:57 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 06:52:57 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2024-06-11 06:52:57 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 06:52:57 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 06:52:58 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 06:52:58 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 06:52:58 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 06:52:58 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-06-11 14:53:00 +0800] [7] [DEBUG] GET /
+[2024-06-11 14:53:05 +0800] [8] [DEBUG] GET /
+[2024-06-11 14:53:29 +0800] [8] [DEBUG] GET /
+[2024-06-11 14:53:47 +0800] [8] [DEBUG] GET /
+[2024-06-11 14:53:49 +0800] [8] [DEBUG] GET /
+[2024-06-11 15:03:39 +0800] [9] [DEBUG] GET /
+[2024-06-11 15:03:40 +0800] [10] [DEBUG] GET /song/uploadsingers/
+[2024-06-11 15:03:41 +0800] [7] [DEBUG] GET /song/uploadsongs/
+[2024-06-11 15:03:41 +0800] [10] [DEBUG] GET /song/uploadsingers/
+[2024-06-11 15:03:49 +0800] [10] [DEBUG] GET /contact_us/
+[2024-06-11 15:04:13 +0800] [8] [DEBUG] GET /contact_us/
+[2024-06-11 15:04:13 +0800] [8] [DEBUG] GET /favicon.ico
+[2024-06-11 15:06:17 +0800] [9] [DEBUG] GET /
+[2024-06-11 15:06:17 +0800] [7] [DEBUG] GET /
+[2024-06-11 15:06:21 +0800] [10] [DEBUG] GET /
+[2024-06-11 15:06:21 +0800] [8] [DEBUG] GET /
+[2024-06-11 15:06:22 +0800] [9] [DEBUG] GET /
+[2024-06-11 15:06:22 +0800] [9] [DEBUG] GET /song/home/
+[2024-06-11 15:06:22 +0800] [7] [DEBUG] GET /
+[2024-06-11 15:06:22 +0800] [10] [DEBUG] GET /
+[2024-06-11 15:06:22 +0800] [8] [DEBUG] GET /
+[2024-06-11 15:06:22 +0800] [9] [DEBUG] GET /
+[2024-06-11 15:06:23 +0800] [9] [DEBUG] GET /
+[2024-06-11 15:06:23 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-11 15:06:23 +0800] [9] [DEBUG] GET /user/register/
+[2024-06-11 15:06:23 +0800] [7] [DEBUG] GET /
+[2024-06-11 15:06:23 +0800] [10] [DEBUG] GET /web_info/
+[2024-06-11 15:06:23 +0800] [9] [DEBUG] GET /
+[2024-06-11 15:13:09 +0800] [7] [DEBUG] GET /song/uploadsingers/
+[2024-06-11 15:13:17 +0800] [9] [DEBUG] GET /song/uploadsongs/
+[2024-06-11 15:13:55 +0800] [9] [DEBUG] GET /song/uploadsingers/
+[2024-06-11 15:16:51 +0800] [8] [DEBUG] POST /song/uploadsingers/
+[2024-06-11 15:16:53 +0800] [10] [DEBUG] GET /song/home/
+[2024-06-11 15:16:55 +0800] [9] [DEBUG] GET /song/uploadsingers/
+[2024-06-11 15:16:56 +0800] [7] [DEBUG] GET /song/uploadsongs/
+[2024-06-11 15:18:35 +0800] [7] [DEBUG] GET /favicon.ico
+[2024-06-11 15:21:17 +0800] [10] [DEBUG] POST /song/uploadsongs/
+[2024-06-11 15:21:23 +0800] [10] [DEBUG] GET /song/home/
+[2024-06-11 15:21:28 +0800] [8] [DEBUG] GET /song/play/1/
+[2024-06-11 15:21:35 +0800] [9] [DEBUG] GET /song/play/1/
+[2024-06-11 15:22:04 +0800] [10] [DEBUG] GET /song/play/1
+[2024-06-11 15:22:08 +0800] [9] [DEBUG] GET /song/play/1
+[2024-06-11 15:22:29 +0800] [7] [DEBUG] GET /song/play/1
+[2024-06-11 15:22:32 +0800] [7] [DEBUG] GET /song/play/1
+[2024-06-11 15:22:34 +0800] [10] [DEBUG] GET /song/play/1
+[2024-06-11 15:23:52 +0800] [8] [DEBUG] GET /song/play/1
+[2024-06-11 07:24:10 +0000] [1] [INFO] Handling signal: term
+[2024-06-11 15:24:10 +0800] [7] [INFO] Worker exiting (pid: 7)
+[2024-06-11 15:24:10 +0800] [9] [INFO] Worker exiting (pid: 9)
+[2024-06-11 15:24:10 +0800] [10] [INFO] Worker exiting (pid: 10)
+[2024-06-11 15:24:10 +0800] [8] [INFO] Worker exiting (pid: 8)
+[2024-06-11 07:24:11 +0000] [1] [INFO] Shutting down: Master
+[2024-06-11 07:27:08 +0000] [1] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: djangoProject.wsgi:application
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 120
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /music
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /music/gunicorn_log/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /music/gunicorn_log/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: djangoProject.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f72e7dbce50>
+  on_reload: <function OnReload.on_reload at 0x7f72e7dbcf70>
+  when_ready: <function WhenReady.when_ready at 0x7f72e7dbd090>
+  pre_fork: <function Prefork.pre_fork at 0x7f72e7dbd1b0>
+  post_fork: <function Postfork.post_fork at 0x7f72e7dbd2d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f72e7dbd3f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f72e7dbd510>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f72e7dbd630>
+  pre_exec: <function PreExec.pre_exec at 0x7f72e7dbd750>
+  pre_request: <function PreRequest.pre_request at 0x7f72e7dbd870>
+  post_request: <function PostRequest.post_request at 0x7f72e7dbd900>
+  child_exit: <function ChildExit.child_exit at 0x7f72e7dbda20>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f72e7dbdb40>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f72e7dbdc60>
+  on_exit: <function OnExit.on_exit at 0x7f72e7dbdd80>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f72e7dbdea0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-11 07:27:08 +0000] [1] [INFO] Starting gunicorn 22.0.0
+[2024-06-11 07:27:08 +0000] [1] [DEBUG] Arbiter booted
+[2024-06-11 07:27:08 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2024-06-11 07:27:08 +0000] [1] [INFO] Using worker: sync
+[2024-06-11 07:27:08 +0000] [6] [INFO] Booting worker with pid: 6
+[2024-06-11 07:27:08 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-06-11 07:27:08 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-06-11 07:27:08 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-06-11 07:27:08 +0000] [1] [DEBUG] 4 workers
+[2024-06-11 15:27:23 +0800] [9] [DEBUG] GET /
+[2024-06-11 15:27:23 +0800] [9] [DEBUG] GET /favicon.ico
+[2024-06-11 15:27:23 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:27:25 +0800] [7] [DEBUG] GET /
+[2024-06-11 15:27:25 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:27:27 +0800] [7] [DEBUG] GET /
+[2024-06-11 15:27:27 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:27:31 +0800] [6] [DEBUG] GET /
+[2024-06-11 15:27:32 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:27:36 +0800] [6] [DEBUG] GET /
+[2024-06-11 15:27:36 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:27:40 +0800] [9] [DEBUG] GET /song/play/1
+[2024-06-11 15:27:43 +0800] [9] [DEBUG] GET /song/home/
+[2024-06-11 15:29:23 +0800] [8] [DEBUG] GET /
+[2024-06-11 15:29:29 +0800] [7] [DEBUG] GET /song/home/
+[2024-06-11 15:29:33 +0800] [9] [DEBUG] GET /song/play/1/
+[2024-06-11 15:29:42 +0800] [7] [DEBUG] GET /song/play/1/
+[2024-06-11 15:44:39 +0800] [6] [DEBUG] GET /song/search/
+[2024-06-11 15:44:43 +0800] [6] [DEBUG] GET /song/home/
+[2024-06-11 15:44:44 +0800] [8] [DEBUG] GET /song/uploadsingers/
+[2024-06-11 15:44:44 +0800] [9] [DEBUG] GET /song/uploadsongs/
+[2024-06-11 15:44:45 +0800] [7] [DEBUG] GET /song/singerlist/
+[2024-06-11 15:44:46 +0800] [6] [DEBUG] GET /song/pagelist/
+[2024-06-11 15:44:49 +0800] [6] [DEBUG] GET /user/login/
+[2024-06-11 15:44:49 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:44:51 +0800] [6] [DEBUG] GET /user/register/
+[2024-06-11 15:44:52 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-11 15:44:53 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:44:54 +0800] [7] [DEBUG] GET /user/login/
+[2024-06-11 15:44:54 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:44:55 +0800] [8] [DEBUG] GET /user/login/
+[2024-06-11 15:44:56 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:44:56 +0800] [9] [DEBUG] GET /user/register/
+[2024-06-11 15:44:57 +0800] [9] [DEBUG] GET /user/register/
+[2024-06-11 15:44:59 +0800] [7] [DEBUG] GET /user/login/
+[2024-06-11 15:45:00 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:45:01 +0800] [7] [DEBUG] GET /user/register/
+[2024-06-11 15:45:02 +0800] [7] [DEBUG] GET /user/login/
+[2024-06-11 15:45:02 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-06-11 15:45:05 +0800] [9] [DEBUG] GET /user/register/
+[2024-06-11 15:53:42 +0800] [9] [DEBUG] GET /song/pagelist/
+[2024-06-11 15:53:46 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-11 15:53:46 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-06-13 13:58:18 +0800] [9] [DEBUG] GET /
+[2024-06-13 13:58:18 +0800] [9] [DEBUG] GET /favicon.ico
+[2024-06-13 13:58:34 +0800] [7] [DEBUG] GET /
+[2024-06-13 13:58:34 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-06-13 21:12:27 +0800] [8] [DEBUG] GET /
+[2024-06-13 22:18:22 +0800] [8] [DEBUG] GET /
+[2024-06-13 22:18:24 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-13 22:18:25 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:26 +0800] [6] [DEBUG] GET /user/register/
+[2024-06-13 22:18:28 +0800] [8] [DEBUG] GET /user/login/
+[2024-06-13 22:18:28 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:29 +0800] [7] [DEBUG] GET /user/register/
+[2024-06-13 22:18:30 +0800] [7] [DEBUG] GET /user/login/
+[2024-06-13 22:18:31 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:34 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-13 22:18:34 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:35 +0800] [9] [DEBUG] GET /user/register/
+[2024-06-13 22:18:36 +0800] [6] [DEBUG] GET /user/login/
+[2024-06-13 22:18:36 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:37 +0800] [9] [DEBUG] GET /user/register/
+[2024-06-13 22:18:38 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-13 22:18:39 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:40 +0800] [9] [DEBUG] GET /user/register/
+[2024-06-13 22:18:41 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-13 22:18:41 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:42 +0800] [7] [DEBUG] GET /user/register/
+[2024-06-13 22:18:43 +0800] [6] [DEBUG] GET /user/login/
+[2024-06-13 22:18:43 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:44 +0800] [7] [DEBUG] GET /user/login/
+[2024-06-13 22:18:44 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:45 +0800] [8] [DEBUG] GET /user/register/
+[2024-06-13 22:18:49 +0800] [8] [DEBUG] GET /user/login/
+[2024-06-13 22:18:50 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:52 +0800] [9] [DEBUG] GET /user/login/
+[2024-06-13 22:18:52 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-06-13 22:18:53 +0800] [7] [DEBUG] GET /user/login/
+[2024-06-13 22:18:53 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 14:23:09 +0800] [6] [DEBUG] GET /
+[2024-07-12 14:23:09 +0800] [6] [DEBUG] GET /favicon.ico
+[2024-07-12 14:23:09 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-07-12 14:23:48 +0800] [8] [DEBUG] GET /
+[2024-07-12 14:24:07 +0800] [9] [DEBUG] GET /user/register/
+[2024-07-12 14:24:42 +0800] [7] [DEBUG] POST /user/register/
+[2024-07-12 14:24:42 +0800] [6] [DEBUG] GET /song/home/
+[2024-07-12 14:25:06 +0800] [9] [DEBUG] GET /contact_us/
+[2024-07-12 14:25:06 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-07-12 14:25:09 +0800] [8] [DEBUG] GET /web_info/
+[2024-07-12 14:25:10 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-07-12 14:25:11 +0800] [6] [DEBUG] GET /user/profile/1
+[2024-07-12 14:25:13 +0800] [8] [DEBUG] GET /song/home/
+[2024-07-12 14:25:16 +0800] [7] [DEBUG] GET /song/uploadsingers/
+[2024-07-12 14:25:20 +0800] [9] [DEBUG] GET /song/uploadsongs/
+[2024-07-12 14:25:23 +0800] [9] [DEBUG] GET /song/uploadsingers/
+[2024-07-12 14:27:04 +0800] [7] [DEBUG] POST /song/uploadsingers/
+[2024-07-12 14:27:06 +0800] [8] [DEBUG] GET /song/uploadsongs/
+[2024-07-12 14:27:58 +0800] [6] [DEBUG] POST /song/uploadsongs/
+[2024-07-12 14:28:38 +0800] [8] [DEBUG] POST /song/uploadsongs/
+[2024-07-12 14:28:40 +0800] [8] [DEBUG] GET /song/home/
+[2024-07-12 14:31:35 +0800] [7] [DEBUG] GET /song/play/1/
+[2024-07-12 15:58:23 +0800] [8] [DEBUG] GET /
+[2024-07-12 15:58:23 +0800] [9] [DEBUG] GET /
+[2024-07-12 15:58:23 +0800] [9] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:23 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-07-12 15:58:27 +0800] [7] [DEBUG] GET /
+[2024-07-12 15:58:27 +0800] [7] [DEBUG] GET /song/home/
+[2024-07-12 15:58:27 +0800] [6] [DEBUG] GET /
+[2024-07-12 15:58:27 +0800] [6] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:27 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-07-12 15:58:27 +0800] [9] [DEBUG] GET /
+[2024-07-12 15:58:27 +0800] [9] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:27 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 15:58:28 +0800] [7] [DEBUG] GET /
+[2024-07-12 15:58:28 +0800] [7] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:28 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-07-12 15:58:28 +0800] [6] [DEBUG] GET /
+[2024-07-12 15:58:28 +0800] [6] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:28 +0800] [9] [DEBUG] GET /
+[2024-07-12 15:58:28 +0800] [6] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:28 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-07-12 15:58:28 +0800] [9] [DEBUG] GET /favicon.ico/
+[2024-07-12 15:58:28 +0800] [7] [DEBUG] GET /
+[2024-07-12 15:58:28 +0800] [7] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:28 +0800] [7] [DEBUG] GET /user/login/
+[2024-07-12 15:58:28 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-07-12 15:58:29 +0800] [7] [DEBUG] GET /user/register/
+[2024-07-12 15:58:29 +0800] [8] [DEBUG] GET /
+[2024-07-12 15:58:29 +0800] [9] [DEBUG] GET /web_info/
+[2024-07-12 15:58:29 +0800] [9] [DEBUG] GET /
+[2024-07-12 15:58:29 +0800] [6] [DEBUG] GET /favicon.ico
+[2024-07-12 15:58:29 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:20:38 +0800] [7] [DEBUG] GET /
+[2024-07-12 20:20:38 +0800] [7] [DEBUG] GET /favicon.ico
+[2024-07-12 20:20:38 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:20:47 +0800] [7] [DEBUG] GET /
+[2024-07-12 20:20:47 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:20:48 +0800] [8] [DEBUG] GET /
+[2024-07-12 20:20:55 +0800] [9] [DEBUG] GET /song/uploadsingers/
+[2024-07-12 20:20:56 +0800] [8] [DEBUG] GET /song/uploadsongs/
+[2024-07-12 20:22:52 +0800] [7] [DEBUG] POST /song/uploadsongs/
+[2024-07-12 20:23:27 +0800] [8] [DEBUG] GET /song/uploadsongs/
+[2024-07-12 20:23:29 +0800] [8] [DEBUG] GET /song/pagelist/
+[2024-07-12 20:23:32 +0800] [8] [DEBUG] GET /song/play/2/
+[2024-07-12 20:23:52 +0800] [9] [DEBUG] GET /song/change_song/2/
+[2024-07-12 20:24:11 +0800] [9] [DEBUG] GET /
+[2024-07-12 20:24:11 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:24:12 +0800] [6] [DEBUG] GET /
+[2024-07-12 20:24:12 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:24:13 +0800] [7] [DEBUG] GET /
+[2024-07-12 20:24:13 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:24:13 +0800] [7] [DEBUG] GET /
+[2024-07-12 20:24:13 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:24:14 +0800] [8] [DEBUG] GET /
+[2024-07-12 20:24:27 +0800] [6] [DEBUG] GET /song/uploadsongs/
+[2024-07-12 20:24:29 +0800] [9] [DEBUG] GET /song/pagelist/
+[2024-07-12 20:24:31 +0800] [7] [DEBUG] GET /song/change_song/2/
+[2024-07-12 20:25:14 +0800] [8] [DEBUG] POST /song/uploadsongs/
+[2024-07-12 20:25:17 +0800] [7] [DEBUG] GET /song/uploadsongs/
+[2024-07-12 20:28:01 +0800] [9] [DEBUG] POST /song/uploadsongs/
+[2024-07-12 20:28:03 +0800] [7] [DEBUG] GET /song/home/
+[2024-07-12 20:28:12 +0800] [6] [DEBUG] GET /song/home/
+[2024-07-12 20:28:25 +0800] [9] [DEBUG] GET /song/home/
+[2024-07-12 20:28:26 +0800] [9] [DEBUG] GET /user/profile/1
+[2024-07-12 20:28:28 +0800] [8] [DEBUG] GET /song/user_song_list/1/
+[2024-07-12 20:28:29 +0800] [8] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:28:33 +0800] [9] [DEBUG] GET /song/user_song_list/1/
+[2024-07-12 20:28:33 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:28:34 +0800] [7] [DEBUG] GET /user/profile/1
+[2024-07-12 20:28:35 +0800] [9] [DEBUG] GET /song/user_song_list/1/
+[2024-07-12 20:28:36 +0800] [6] [DEBUG] GET /favicon.ico/
+[2024-07-12 20:28:44 +0800] [8] [DEBUG] GET /user/profile/1
+[2024-07-12 20:28:46 +0800] [8] [DEBUG] GET /song/user_song_list/1/
+[2024-07-12 20:28:47 +0800] [7] [DEBUG] GET /favicon.ico/
+[2024-07-12 21:25:55 +0800] [7] [DEBUG] GET /song/home/
+[2024-07-12 21:26:08 +0800] [9] [DEBUG] GET /song/play/3/

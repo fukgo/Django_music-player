@@ -1,0 +1,122 @@
+{% extends 'Song/home.html' %}
+{% load static %}
+{% block home %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ profile.avatar.url }}" class="card-img-top" alt="User avatar">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ user.username }}</h5>
+                    <p class="card-text">{{ profile.get_gender_display|default:"暂未设置性别" }}</p>
+                    <p class="card-text">{{ profile.bod|date:"j F Y"|default:"暂未设置生日" }}</p>
+                    <p class="card-text">{{ profile.info|default:"暂未设置简介" }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">我的歌单</h5>
+                    <div id="accordion">
+                        {% for song_list in user.my_song_list.all %}
+                        <div class="card mb-3">
+                            <div class="card-header" id="heading{{ forloop.counter }}">
+                                <h6 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                                        {{ song_list.list_name }}
+                                    </button>
+                                </h6>
+                            </div>
+                            <div id="collapse{{ forloop.counter }}" class="collapse" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="list-group">
+                                        {% for song in song_list.song.all %}
+                                        <a href="{{ song.song_url }}" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">{{ song.song_name }}</h6>
+                                                <small>{{ song.song_singer.name }}</small>
+                                            </div>
+                                            <small class="text-muted">点击播放</small>
+                                        </a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <style>
+    body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    background-color: #ffffff;
+    border-radius: 0 0 10px 10px;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+}
+
+.btn-link {
+    font-size: 1.25em;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.btn-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px 15px;
+}
+
+.list-group-item:not(:last-child) {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.list-group-item-action {
+    color: #333;
+}
+
+.list-group-item-action:hover {
+    background-color: #f8f9fa;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+    </style>
+{% endblock %}

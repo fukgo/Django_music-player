@@ -1,0 +1,451 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ song.song_name }}</title>
+    <link rel="shortcut icon" href="{% static 'img/player.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'player/player.css' %}">
+    <script src="{% static 'player/player.js' %}"></script>
+    <script src="{% static 'layer/layer.js' %}"></script>
+    <script src="{% static 'layer/mobile/need/layer.css' %}"></script>
+    <script src="{% static 'layer/mobile/layer.js' %}"></script>
+    <style>
+        
+
+.record-bg {
+    background-image: url("{% static background_img %}");
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+}
+
+#record-img {
+    background-image: url("{{ song.song_image.url }}");
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+}
+
+.mode {
+    background-image: url("{% static 'music/images/play/mode1.png' %}");
+    background-size: 100% 100%;
+}
+
+.s-left {
+    background-image: url("{% static 'music/images/play/next.png' %}");
+    background-size: 100% 100%;
+}
+
+.icon-play {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-image: url("{% static 'music/images/play/continue.png' %}");
+    background-size: 100% 100%;
+}
+
+.icon-pause {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-image: url("{% static 'music/images/play/pause.png' %}");
+    background-size: 100% 100%;
+}
+
+.s-right {
+    background-image: url("{% static 'music/images/play/last.png' %}");
+    background-size: 100% 100%;
+}
+
+.volume {
+    background-image: url("{% static 'music/images/play/voice.png' %}");
+    background-size: 100% 100%;
+}
+
+.MV {
+    background-image: url("{% static 'music/images/play/MV.png' %}");
+    background-size: 100% 100%;
+}
+
+.list {
+    background-image: url("{% static 'music/images/play/list.png' %}");
+    background-size: 100% 100%;
+}
+
+    </style>
+
+</head>
+
+<body id="body" style="background-image: url('{% static background_img %}');">
+    <div class="upper-container">
+        <!-- 唱片背景 -->
+        <div class="record-container">
+            <div class="record-bg">
+                <div id="record-img" class="rotate-play"></div>
+            </div>
+        </div>
+        <!-- 音乐介绍 -->
+        <div class="introduction-container">
+            <div class="text-container">
+                <div id="music-title" data-song-id="{{ song.id }}">{{ song.song_name }}</div>
+                <div class="author-container">作者：
+                    <span id="author-name">{{ song.song_singer }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 音乐播放器主要内容 -->
+    <div class="audio-box">
+        <div class="audio-container">
+            <audio id="audioTag"></audio>
+            <!-- 进度条 -->
+            <div class="a-progress">
+                <div class="pgs-total" id="progress-total">
+                    <div class="pgs-play" id="progress" style="width: 0;"></div>
+                </div>
+            </div>
+
+            <!-- 下排控制按钮 -->
+            <div class="a-controls">
+                <!-- 播放时长 -->
+                <div class="time-container">
+                    <span class="played-time" id="playedTime">00:00</span>&nbsp;/&nbsp;
+                    <span class="audio-time" id="audioTime">00:00</span>
+                </div>
+                <!-- 中间按钮 -->
+                <div class="center-button-container">
+                    <!-- 播放模式 -->
+{#                    <div id="playMode" class="center-icon mode"></div>#}
+                    <!-- 上一首 -->
+                    <div id="skipForward" class="center-icon s-right"></div>
+                    <!-- 暂停按钮 -->
+                    <div id="playPause" class="icon-play"></div>
+                    <!-- 下一首 -->
+                    <div id="skipBackward" class="center-icon s-left"></div>
+                    <!-- 音量调节 -->
+                    <div id="volume" class="center-icon volume"></div>
+                    <!-- 音量悬浮窗 -->
+                    <input type="range" id="volumn-togger" name="change" value="70" min="0" max="100" step="1">
+                </div>
+                <!-- 后部按钮 -->
+                <div class="bottom-button-container">
+                    <!-- 列表 -->
+                    <div id="list" class="bottom-icon list"></div>
+                    <!-- 倍速 -->
+                    <div id="speed" class="speed">1.0X</div>
+                    <!-- MV -->
+{#                    <div id="MV" class="bottom-icon MV"></div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 音乐列表 -->
+    <div class="close-list" id="close-list"></div>
+    <div class="music-list" id="music-list">
+        <div class="music-list-container">
+            <div class="music-list-title">播放队列</div>
+            <hr class="line">
+            <div class="all-list">
+                {% include 'Song/songs_list.html' %}
+            </div>
+        </div>
+    </div>
+    
+    <script>
+// 获取主题背景
+var body = document.getElementById('body');
+// 获取音频播放器对象
+var audio = document.getElementById('audioTag');
+
+// 歌曲名
+var musicTitle = document.getElementById('music-title');
+// 歌曲海报
+var recordImg = document.getElementById('record-img');
+// 歌曲作者
+var author = document.getElementById('author-name');
+
+// 进度条
+var progress = document.getElementById('progress');
+// 总进度条
+var progressTotal = document.getElementById('progress-total');
+
+// 已进行时长
+var playedTime = document.getElementById('playedTime');
+// 总时长
+var audioTime = document.getElementById('audioTime');
+
+// 播放模式按钮
+var mode = document.getElementById('playMode');
+// 上一首
+var skipForward = document.getElementById('skipForward');
+// 暂停按钮
+var pause = document.getElementById('playPause');
+// 下一首
+var skipBackward = document.getElementById('skipBackward');
+// 音量调节
+var volume = document.getElementById('volume');
+// 音量调节滑块
+var volumeTogger = document.getElementById('volumn-togger');
+
+// 列表
+var list = document.getElementById('list');
+// 倍速
+var speed = document.getElementById('speed');
+// MV
+var MV = document.getElementById('MV');
+
+// 左侧关闭面板
+var closeList = document.getElementById('close-list');
+// 音乐列表面板
+var musicList = document.getElementById('music-list');
+
+
+// 暂停/播放功能实现
+pause.onclick = function (e) {
+    if (audio.paused) {
+        audio.play();
+        rotateRecord();
+        pause.classList.remove('icon-play');
+        pause.classList.add('icon-pause');
+    } else {
+        audio.pause();
+        rotateRecordStop();
+        pause.classList.remove('icon-pause');
+        pause.classList.add('icon-play');
+    }
+}
+
+audio.addEventListener('timeupdate', updateProgress); // 监听音频播放时间并更新进度条
+function updateProgress() {
+    var value = audio.currentTime / audio.duration;
+    progress.style.width = value * 100 + '%';
+    playedTime.innerText = transTime(audio.currentTime);
+
+}
+
+function transTime(value) {
+    var time = "";
+    var h = parseInt(value / 3600);
+    value %= 3600;
+    var m = parseInt(value / 60);
+    var s = parseInt(value % 60);
+    if (h > 0) {
+        time = formatTime(h + ":" + m + ":" + s);
+    } else {
+        time = formatTime(m + ":" + s);
+    }
+
+    return time;
+}
+
+function formatTime(value) {
+    var time = "";
+    var s = value.split(':');
+    var i = 0;
+    for (; i < s.length - 1; i++) {
+        time += s[i].length == 1 ? ("0" + s[i]) : s[i];
+        time += ":";
+    }
+    time += s[i].length == 1 ? ("0" + s[i]) : s[i];
+    return time;
+}
+
+// 点击进度条跳到指定点播放
+progressTotal.addEventListener('mousedown', function (event) {
+    if (!audio.paused || audio.currentTime != 0) {
+        var pgsWidth = parseFloat(window.getComputedStyle(progressTotal, null).width.replace('px', ''));
+        var rate = event.offsetX / pgsWidth;
+        audio.currentTime = audio.duration * rate;
+        updateProgress(audio);
+    }
+});
+function playSong(url) {
+    console.log(url);
+    layer.open({
+        title: "退出播放",
+        content: "确认退出播放页面？",
+        btn: ['确定', '取消'],
+            yes: function (index) {
+                fetch(url, {
+                    method: 'GET'
+                }).then(response => {
+                    window.location.href = url;
+                })
+                layer.close(index);
+            },
+            btn2: function (index) {
+                layer.close(index);
+            }
+    });
+}
+
+// 点击列表展开音乐列表
+list.addEventListener('click', function (event) {
+    musicList.classList.remove("list-card-hide");
+    musicList.classList.add("list-card-show");
+    musicList.style.display = "flex";
+    closeList.style.display = "flex";
+    closeList.addEventListener('click', closeListBoard);
+        fetch("{% url 'song:list' %}")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        var list = document.querySelector('.all-list')
+        list.innerHTML = ''
+        data.forEach(song => {
+            list.innerHTML += `<div style="text-align: center; color: burlywood"  data-url="/song/play/${song.id}" onclick="playSong(this.dataset.url)">${song.song_name}`
+        });
+    })
+
+});
+
+// 点击关闭面板关闭音乐列表
+function closeListBoard() {
+    musicList.classList.remove("list-card-show");
+    musicList.classList.add("list-card-hide");
+    closeList.style.display = "none";
+}
+
+// 存储当前播放的音乐序号
+var musicId = "{{ song.id }}";
+
+// 后台音乐列表
+
+// 初始化音乐
+function initMusic() {
+    audio.src = "{{ song.song_file.url }}";
+    audio.load();
+    recordImg.classList.remove('rotate-play');
+    audio.ondurationchange = function () {
+        audioTime.innerText = transTime(audio.duration);
+        // 重置进度条
+        audio.currentTime = 0;
+        updateProgress();
+        refreshRotate();
+    }
+}
+initMusic();
+
+// 初始化并播放
+function initAndPlay() {
+    initMusic();
+    pause.classList.remove('icon-play');
+    pause.classList.add('icon-pause');
+    audio.play();
+    rotateRecord();
+}
+
+
+
+// 上一首
+skipForward.addEventListener('click', function (event) {
+    songId = {{ song.id }};
+    if (songId == 1) {
+        songId = {{ count }};
+    }
+    else {
+        songId = songId - 1;
+    }
+    window.location.href = '/song/play/' + songId;
+});
+
+// 下一首
+skipBackward.addEventListener('click', function (event) {
+    songId = {{ song.id }};
+    if (songId == {{ count }}) {
+        songId = 1;
+    } else {
+        songId = songId + 1
+
+    }
+    window.location.href = '/song/play/' + songId;
+});
+
+// 倍速功能
+speed.addEventListener('click', function (event) {
+    var speedText = speed.innerText;
+    if (speedText == "1.0X") {
+        speed.innerText = "1.5X";
+        audio.playbackRate = 1.5;
+    }
+    else if (speedText == "1.5X") {
+        speed.innerText = "2.0X";
+        audio.playbackRate = 2.0;
+    }
+    else if (speedText == "2.0X") {
+        speed.innerText = "0.5X";
+        audio.playbackRate = 0.5;
+    }
+    else if (speedText == "0.5X") {
+        speed.innerText = "1.0X";
+        audio.playbackRate = 1.0;
+    }
+});
+
+// MV功能
+MV.addEventListener('click', function (event) {
+    var storage_list = window.sessionStorage;
+    storage_list['musicId'] = musicId;
+    window.open("video.html");
+});
+
+// 刷新唱片旋转角度
+function refreshRotate() {
+    recordImg.classList.add('rotate-play');
+}
+
+// 使唱片旋转
+function rotateRecord() {
+    recordImg.style.animationPlayState = "running"
+}
+
+// 停止唱片旋转
+function rotateRecordStop() {
+    recordImg.style.animationPlayState = "paused"
+}
+
+var lastVolumn = 70
+
+// 滑块调节音量
+audio.addEventListener('timeupdate', updateVolumn);
+function updateVolumn() {
+    console.log(volumeTogger.value);
+    console.log(audio.volume);
+    audio.volume = volumeTogger.value / 100;
+}
+console.log(audio.volume);
+// 点击音量调节设置静音
+volume.addEventListener('click', setNoVolumn);
+function setNoVolumn() {
+    if (volumeTogger.value == 0) {
+        if (lastVolumn == 0) {
+            lastVolumn = 70;
+        }
+        volumeTogger.value = lastVolumn;
+        volume.style.backgroundImage = "url('{% static "music/images/play/voice.png" %}')";
+    }
+    else {
+        lastVolumn = volumeTogger.value;
+        volumeTogger.value = 0;
+        volume.style.backgroundImage = "url('{% static "music/images/play/mute.png" %}')";
+    }
+}
+console.log(volumeTogger.value);
+    </script>
+
+        
+</body>
+
+
+</html>

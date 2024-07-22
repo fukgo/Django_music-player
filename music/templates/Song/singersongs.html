@@ -1,0 +1,37 @@
+{% extends 'Song/home.html' %}
+{% load  static %}
+{% block home %}
+<h1>歌手歌曲</h1>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'song:songlist' %}">歌曲</a></li>
+    <li class="breadcrumb-item active" aria-current="page">歌手</li>
+  </ol>
+</nav>
+    <div>
+    <a href="#" class="btn btn-success" style="float: right">新增歌手歌曲</a>
+    </div>
+    <p>{{ singer.name }}列表,共有{{ singer.songs.count }}首歌曲</p>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">歌曲id</th>
+      <th scope="col">歌曲名称</th>
+      <th scope="col">歌曲风格</th>
+        <th scope="col">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for song in songs %}
+    <tr>
+      <th scope="row">{{ song.id }}</th>
+        <td><a href="{% url 'song:play_song' song.id %}">{{ song.song_name }}</a></td> 
+      <td>{{ song.song_genre }}</td>
+      <td><button type="button" class="btn btn-primary">详情</button></td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}

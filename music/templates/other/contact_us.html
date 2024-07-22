@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/layer/2.3/layer.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .contact-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="contact-container">
+        <h1>联系我们</h1>
+        <form action="{% url 'contact_us' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="contact">邮箱或电话号码</label>
+            <input type="text" id="contact" name="email_or_phone" required>
+            
+            <label for="message">问题或疑问</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">提交</button>
+        </form>
+    </div>
+<script>
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();  // 阻止表单的默认提交行为
+
+    // 获取表单数据
+    var formData = new FormData(event.target);
+
+    fetch(event.target.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+        }
+    }).then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+            // 使用layer弹窗显示成功信息
+            layer.msg(data.message, {icon: 1});
+        } else if (data.status === 'fail') {
+            // 使用layer弹窗显示错误信息
+            layer.msg(data.message, {icon: 2});
+        }
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'Song/home.html' %}
+{% load  static %}
+{% block home %}
+<h1>歌曲列表</h1>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'song:singerlist' %}">歌手</a></li>
+    <li class="breadcrumb-item active" aria-current="page">歌曲</li>
+  </ol>
+</nav>
+    <div>
+    <a href="{% url 'song:upload_songs' %}" class="btn btn-success" style="float: right">新增歌曲</a>
+    </div>
+    <p>list</p>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">歌曲名称</th>
+      <th scope="col">歌手</th>
+      <th scope="col">歌曲风格</th>
+        <th scope="col">查看</th>
+        <th scope="col">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for song in songs %}
+    <tr>
+      <th scope="row">{{ song.id }}</th>
+        <td><a href="{% url 'song:play_song' song.id %}">{{ song.song_name }}</a></td> 
+      <td>{{ song.song_singer }}</td> 
+      <td>{{ song.song_genre }}</td>
+      <td><button type="button" class="btn btn-primary">详情</button></td>
+    <td>
+    <button type="button" class="btn btn-dark" onclick="window.location.href='{% url 'song:change_song' song.id %}'">修改</button>
+</td>
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

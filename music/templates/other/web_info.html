@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人音乐网站介绍</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .header a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header a:hover {
+    background-color: #104e8b;
+}
+        header {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            margin: 20px 0;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 2em;
+            color: #1e90ff;
+        }
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #1e90ff;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        ul li:hover {
+            background: #104e8b;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #1e90ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #104e8b;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>个人音乐网站</h1>
+    <p>探索我的音乐世界，了解我运用的技术和功能</p>
+    <a href="{% url 'song:home' %}">返回主页</a> 
+</header>
+    <div class="container">
+        <div class="section">
+            <h2 onclick="toggleContent('content1')">网站内容</h2>
+            <div class="content" id="content1">
+                <p>在我的个人音乐网站上，您可以找到以下内容：</p>
+                <ul>
+                    <li>最新发布的音乐</li>
+                    <li>热门音乐排行榜</li>
+                    <li>音乐专辑推荐</li>
+                    <li>个人音乐博客</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleContent('content2')">运用技术栈</h2>
+            <div class="content" id="content2">
+                <p>我的个人音乐网站运用了以下技术栈：</p>
+                <ul>
+                    <li>前端：HTML、CSS、JavaScript</li>
+                    <li>框架：bootstrap</li>
+                    <li>后端：Django</li>
+                    <li>数据库：Mysql</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleContent('content3')">网站功能</h2>
+            <div class="content" id="content3">
+                <p>我的个人音乐网站提供了以下功能：</p>
+                <ul>
+                    <li>音乐播放与下载</li>
+                    <li>用户注册与登录</li>
+                    <li>个性化音乐推荐</li>
+                    <li>用户评论与互动</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

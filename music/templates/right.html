@@ -1,0 +1,72 @@
+{% load static %}
+{% block right %}
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/layer/2.3/layer.js"></script>
+
+<script>
+function loginOut() {
+    layer.confirm('确认退出登录？', {
+        btn: ['确认','取消'] //按钮
+    }, function(){
+        // 这里发送退出登录的请求
+        fetch("{% url 'user:login_out' %}", {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                layer.msg('已退出登录', {icon: 1});
+                window.location.reload();
+            } else {
+                layer.msg('退出登录失败', {icon: 2});
+            }
+        })
+        .catch(error => {
+            console.error('退出登录出错:', error);
+            layer.msg('退出登录出错', {icon: 2});
+        });
+    }, function(){
+        layer.msg('已取消', {icon: 2});
+    });
+}
+</script>
+
+<div class="container py-4">
+    <h2 class="text-center mb-4">这里是XX音乐播放器</h2>
+    {% if user.is_authenticated %}
+    <div class="card text-center shadow-sm mb-4">
+        <div class="card-body">
+            <img src="{{ user.profile.avatar.url }}" class="rounded-circle mb-3" alt="User avatar" style="width: 100px; height: 100px;">
+            <h5 class="card-title">欢迎你，{{ user.username }}</h5>
+            <p class="card-text">很高兴见到你！</p>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    {{ user.username }}
+                </a>
+                <a href="{% url 'user:profile' user.id %}" class="list-group-item list-group-item-action">个人主页</a>
+                <a href="{% url 'song:user_song_list' user.id %}" class="list-group-item list-group-item-action">我的歌单</a>
+                <a href="#" class="list-group-item list-group-item-action text-danger" onclick="loginOut()">退出登录</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="card text-center shadow-sm mb-4">
+        <div class="card-body">
+            <img src="{% static 'user/guide.png' %}" class="rounded-circle mb-3" alt="Guide image" style="width: 100px; height: 100px;">
+            <h5 class="card-title">你还没有登录</h5>
+            <p class="card-text">欢迎来到XX音乐播放器，请先登录或注册。</p>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    游客访问
+                </a>
+                <a href="{% url 'user:login' %}" class="list-group-item list-group-item-action">登录</a>
+                <a href="{% url 'user:register' %}?type=register" class="list-group-item list-group-item-action">注册</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<style>
+
+</style>
+{% endblock %}
