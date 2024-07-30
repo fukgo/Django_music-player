@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0j_78(20#o(58ykl_e4pw)^8ou@%cqyhe#dwotx^mb5p6!i=07'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'music.szpu.online']
 
@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'music',
         'USER': 'root',
         'PASSWORD': 'qweasdzxc',
-        'HOST': '47.106.225.168',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
 
     }
@@ -139,7 +139,6 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 AUTH_USER_MODEL = 'User.CustomUser'
-
 #设置登录成功后跳转的页面
 LOGIN_REDIRECT_URL = '/song/home/'
 
